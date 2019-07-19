@@ -55,9 +55,10 @@ model_def='models/default.json' #set it to the current model definition
 new_model_def='models/1.json' #path to new model definition
 
 
-def get_l1_norm(x):
-    x[x<0] = 0.0            
-    return np.abs(x)/np.max(x)
+def get_l2_norm(x):
+    x[x<0] = 0.0
+    l2 = np.sqrt(x**2)
+    return l2/np.max(l2)
 
 def get_mask_id(x):
     p=np.where(x==0)
@@ -119,14 +120,14 @@ for op_name in rank_values:
 
     if compute:
         print op_name
-        l1 = get_l1_norm(rank_values[op_name])
-        sorted_ = np.argsort(l1)
-        norm_val_sorted = l1[sorted_]
+        l2 = get_l2_norm(rank_values[op_name])
+        sorted_ = np.argsort(l2)
+        norm_val_sorted = l2[sorted_]
         if decide_threshold:
             plt.hist(norm_val_sorted)
             plt.show()
         else:
-            mask = l1<threshold
+            mask = l2<threshold
             trimmed.append([op_name, mask])         
     
     compute = False
