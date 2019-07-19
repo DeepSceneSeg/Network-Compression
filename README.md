@@ -38,8 +38,8 @@ tensorflow-gpu 1.4.0
 ## Pruning Procedure
     1. Train the AdapNet++ network on a given dataset until convergence.
     2. Compute the Oracle values of the model by running get_oracle_rank.py script.
-    3. Prune the model using prun_model.py script. The script allows to prune all the layers of a given section (such as block1, block2, easpp etc.) based on the set threshold at once. 
-       Note: Prun one layer at a time for better performance (time-consuming).
+    3. Prune the model using prune_model.py script. The script allows to prune all the layers of a given section (such as block1, block2, easpp etc.) based on the set threshold at once. 
+       Note: Prune one layer at a time for better performance (time-consuming).
               To set the threshold value for a given layer, start from a lower threshold, zero out the parameters less than the threshold (in script set try_zeros = True), save and evaluate the checkpoint. Keep on increasing the threshold until you see about 1% (less aggressive) deviation from the default mIoU.
     4. Re-train the pruned model. 
     5. Repeat steps 2-4 until the desired parameter reduction vs mIoU reduction tradeoff is obtained.
