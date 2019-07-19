@@ -7,15 +7,15 @@ This repository contains our TensorFlow implementation of Network-Compression fo
 If you find the code useful for your research, please consider citing our paper:
 ```
 @article{valada19ijcv,
-           author = {Valada, Abhinav and Mohan, Rohit and Burgard, Wolfram},
-           title = {Self-Supervised Model Adaptation for Multimodal Semantic Segmentation},
-           journal = {International Journal of Computer Vision (IJCV)},
-           year = {2019},
-           month = {jul},
-           doi = {10.1007/s11263-019-01188-y},
-           note = {Special Issue: Deep Learning for Robotic Vision},
-           issn = {1573-1405},
-           day = {08}}
+         author = {Valada, Abhinav and Mohan, Rohit and Burgard, Wolfram},
+         title = {Self-Supervised Model Adaptation for Multimodal Semantic Segmentation},
+         journal = {International Journal of Computer Vision (IJCV)},
+         year = {2019},
+         month = {jul},
+         doi = {10.1007/s11263-019-01188-y},
+         note = {Special Issue: Deep Learning for Robotic Vision},
+         issn = {1573-1405},
+         day = {08}}
 }
 ```
 ## Example Results
@@ -132,3 +132,6 @@ python get_oracle_rank.py -c config/orcale_rank.config or python get_orcale_rank
 ## Additional Notes:
    * Information regarding network intialization and data preparation is available [here](https://github.com/DeepSceneSeg/AdapNet-pp/blob/master/README.md).
    * Trained model checkpoints for various datasets (such as ForestFreiburg, Cityscapes, Synthia, SUN RGB-D and ScanNet v2) can be found [here](https://github.com/DeepSceneSeg/AdapNet-pp/blob/master/README.md).
+   
+## License
+For academic usage, the code is released under the [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html) license. For any commercial purpose, please contact the authors.
