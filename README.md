@@ -14,6 +14,11 @@ If you find the code useful for your research, please consider citing our paper:
   year = {2018},
 }
 ```
+## Example Results
+
+| Dataset       | Compression Plot    |
+| :--- | ------------- | 
+| Cityscapes    |<img src="images/compression.png" width=700>
 
 ## Contacts
 * [Abhinav Valada](http://www2.informatik.uni-freiburg.de/~valada/)
@@ -30,4 +35,38 @@ Python 2.7
 ```
 tensorflow-gpu 1.4.0
 ```
+#### Training Params
+```
+    gpu_id: id of gpu to be used
+    model: name of the model
+    num_classes: number of classes (including void, label id:0)
+    intialize:  path to pre-trained model
+    checkpoint: path to save model
+    train_data: path to dataset .tfrecords
+    batch_size: training batch size
+    skip_step: how many steps to print loss 
+    height: height of input image
+    width: width of input image
+    max_iteration: how many iterations to train
+    learning_rate: initial learning rate
+    save_step: how many steps to save the model
+    power: parameter for poly learning rate
+```
 
+#### Evaluation Params
+```
+    gpu_id: id of gpu to be used
+    model: name of the model
+    num_classes: number of classes (including void, label id:0)
+    checkpoint: path to saved model
+    test_data: path to dataset .tfrecords
+    batch_size: evaluation batch size
+    skip_step: how many steps to print mIoU
+    height: height of input image
+    width: width of input image
+```
+
+
+## Additional Notes:
+   * Information regarding network intialization and data preparation is available [here](https://github.com/DeepSceneSeg/AdapNet-pp/blob/master/README.md).
+   * Trained model checkpoints for various datasets (such as ForestFreiburg, Cityscapes, Synthia, SUN RGB-D and ScanNet v2) can be found [here](https://github.com/DeepSceneSeg/AdapNet-pp/blob/master/README.md).
