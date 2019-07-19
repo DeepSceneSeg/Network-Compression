@@ -22,7 +22,7 @@ import tensorflow as tf
 from matplotlib import pyplot as plt
 from models.mapping import mapping
 
-decide_threshold = False # to visualize the histogram of l1 norm
+decide_threshold = False # to visualize the histogram of l2 norm
 phase = 'decoder_conv1'  #conv1, block1/unit_{1,2,3}, block2/unit_{1,2,3,4}, block3/unit_{1,2,3,4,5,6}, block4unit_{1,2,3}, easpp, upsample1, upsample2, decoder_conv1, decoder_conv2
                   # upsample1 is the first deconvolution layer w.r.t input side of the network followed by upsample2 and upsample3
                   # decoder_conv1 is the 3x3 conv layer pair between upsample1 and upsample2 layers
