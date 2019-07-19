@@ -41,19 +41,18 @@ conv_name = 'conv1' #in case of block phase, conv1, conv2, conv3, if the block c
                     
 save_nvidia_name = 'n1.p' # path to the nvidia computed rank values
 list_of_convs = ['conv256/', 'conv70/', 'conv80/', 'conv90/', 'conv10/', 'conv71/', 'conv81/', 'conv91/', 'conv7/', 'conv8/', 'conv9/', 'conv247/', 'conv248/', 'conv249/']
-threshold = 0.2
-checkpoint_name = '/home/mohan/AdapNet_Training/checkpoint_final_cityuni/adapnet_sc-121999' # path address to checkpoint
-gpu_id = '1'
-try_zeros = False
-new_checkpoint_save = 'check/adapnet_sc-122999' #path to prunned one
-mask_load = None # incase mask already exist
-mask_save = 'temp.npy' # saving mask
-Num_classes = 12
-height = 384
-width = 768
-model_def='models/default.json' #set it to the current model definition
-new_model_def='models/1.json' #path to new model definition
-
+threshold = 0.2 # parameters less than the threshold are removed
+checkpoint_name = '/home/mohan/AdapNet_Training/checkpoint_final_cityuni/adapnet_sc-121999' # path address to original checkpoint
+gpu_id = '1' # gpu id
+try_zeros = False # when set true, elimination of the prameters doesn't take place instead their weights are set 0.
+new_checkpoint_save = 'check/adapnet_sc-122999' #save path for prunned or zeroed checkpoint
+mask_load = None # incase mask already exist, to update it
+mask_save = 'temp.npy' # saving mask, used with conv3 of each block to handle shortcut connection
+Num_classes = 12 # Number of Classes
+height = 384 # height of the model
+width = 768 # width of the model
+model_def='models/default.json' #set it to the current model definition, if try_zeros = True, use this model_def with the new checkpoint to evaluate.
+new_model_def='models/1.json' #path to the new prunned model definition, when try_zeros = False
 
 def get_l2_norm(x):
     x[x<0] = 0.0
