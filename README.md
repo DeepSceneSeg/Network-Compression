@@ -35,7 +35,7 @@ Python 2.7
 ```
 tensorflow-gpu 1.4.0
 ```
-## Prunning Procedure
+## Pruning Procedure
     1. Train the AdapNet++ network on a given dataset until convergence.
     2. Compute the Oracle values of the model by running get_oracle_rank.py script.
     3. Prune the model using prun_model.py script. The script allows to prune all the layers of a given section (such as block1, block2, easpp etc.) based on the set threshold at once. 
@@ -46,7 +46,7 @@ tensorflow-gpu 1.4.0
 
 ## Params
 
-#### Prunning Param
+#### Pruning Param
     * The following parameters can be set at the beginning of the prun_model.py script. The script contains a description of the same.
     * The pruning script generates the pruned model definition and checkpoint. (mask indices .npy file if necessary)  
 
