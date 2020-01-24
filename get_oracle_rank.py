@@ -77,7 +77,7 @@ def test_func(config):
             i = 0
             for activation, gradient in zip(activations,gradients):
                 v=np.sum(activation[0]*gradient[0], axis=(0,1,2))
-                v=v/(a[0].shape[0]*a[0].shape[1]*a[0].shape[2])
+                v=v/(activation[0].shape[0]*activation[0].shape[1]*activation[0].shape[2])
                 if start == True:
                     rank_values[name_of_ops[i]] = v
                 else:
